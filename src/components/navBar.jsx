@@ -1,22 +1,67 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
+
+
+
 
 class NavBar extends Component {
-  state = {
-    count:10,
-    
-    
-  
-    } 
-  render() { 
-    return (
-      
-      <div>
-        <h2>me mem</h2>
-        <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta voluptate, ut fuga dicta totam enim repudiandae reprehenderit corrupti voluptatibus, deleniti doloremque labore esse? Magni aut modi inventore officiis numquam beatae a quidem neque, praesentium cum. Totam perferendis eligendi dicta fugit, sapiente suscipit voluptatem, tenetur tempora odit iure tempore quis hic exercitationem at consequuntur aperiam cupiditate! Velit quod ea magnam odit, est hic cupiditate repellendus quisquam quos expedita sequi similique voluptate ad illum molestiae alias iste!</h1>
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime error vel officia quo iure ad corrupti, tempora quaerat aperiam voluptatum, architecto corporis facilis quas beatae iste molestiae a atque nobis? Alias, expedita aliquam aliquid architecto corporis magni, voluptatibus id similique illum ullam sint ut delectus natus dolore explicabo praesentium quibusdam eum cumque, accusantium perspiciatis accusamus aperiam veniam perferendis? Modi ad nam earum sapiente veniam eius minima repudiandae vero soluta et neque perferendis cum sit, incidunt molestias praesentium aperiam assumenda culpa.</h2>
-      </div>
-    );
+    state = {
+        
+    }
+ 
+  raise =()=>{
+    console.log("verified")
   }
+
+    render() { 
+
+    
+        const{click,raise}=this.props
+
+        return ( 
+            <div>
+                <nav  className="navbar navbar-expand-lg bg-body-tertiary">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#">JoelBlessed</a>
+    <button onClick={this.click} style={{cursor:"pointer"}} className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Link</a>
+        </li>
+        <li className="nav-item dropdown">
+          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul className="dropdown-menu">
+            <li><a className="dropdown-item" href="#">Action</a></li>
+            <li><a className="dropdown-item" href="#">Another action</a></li>
+            <li><hr  className="dropdown-divider"/></li>
+            <li><a className="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li className="nav-item">
+          <a className="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form className="d-flex" role="search">
+        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
+        <button className="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+            </div>
+
+        );
+    }
 }
  
 export default NavBar;
